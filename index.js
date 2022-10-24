@@ -3,6 +3,8 @@ let nombre = prompt("Ingrese su nombre");
 let valorTotal = 0;
 let carrito = alert("Bienvenido al carrito " + nombre);
 let productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera"));
+let continuar = confirm("desea continuar?");
+
 const iva = 0.21;
 
 while(continuar){
@@ -23,7 +25,7 @@ while(continuar){
             console.log(valorTotal);
             break;
     }
-    continuar = confirm("desea continuar?");
+    continuar = confirm("Quiere agregar otro porducto?");
     productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera"));
     function totalIva (iva,valorTotal){
         console.log((valorTotal*iva) + valorTotal);
