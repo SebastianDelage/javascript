@@ -27,6 +27,9 @@ while(continuar){
     }
     continuar = confirm("Quiere agregar otro porducto?");
     productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera"));
+    if(productos > 3){
+        alert ("el numero  es invalido");
+    }
     function totalIva (iva,valorTotal){
         console.log((valorTotal*iva) + valorTotal);
     }
