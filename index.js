@@ -28,11 +28,11 @@ while(continuar.toLocaleLowerCase != "n"){
     }
   
         continuar = prompt("Quiere agregar otro porducto? \n S-si N-no");
-        if(continuar.toLocaleLowerCase == "s")
+        if(continuar.toLocaleLowerCase != "n"){ 
         productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera"));
-    
-
-    totalIva(iva,valorTotal)
+        }else{
+            alert = ("gracias por su comrpa el total es: " + totalIva)
+        }
 } 
 
 
