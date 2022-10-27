@@ -26,12 +26,12 @@ while(continuar.toLocaleLowerCase != "n"){
             console.log(valorTotal);
             break;
     }
-    continuar = prompt("Quiere agregar otro porducto? \n S-si N-no");
-    productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera"));
-    if(productos > 3){
-        alert ("el numero  es invalido");
-    }
-   
+  
+        continuar = prompt("Quiere agregar otro porducto? \n S-si N-no");
+        if(continuar.toLocaleLowerCase == "s")
+        productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera"));
+    
+
     totalIva(iva,valorTotal)
 } 
 
