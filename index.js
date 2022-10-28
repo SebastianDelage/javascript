@@ -1,14 +1,14 @@
 
 let nombre = prompt("Ingrese su nombre");
 let valorTotal = 0;
-let carrito = alert("Bienvenido al carrito " + nombre);
-let productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera"));
-let continuar = prompt("desea continuar?\n S-si N-no");
-if(productos > 3){
-    alert ("el numero  es invalido");
-}
+alert("Bienvenido al carrito " + nombre);
+let continuar = confirm("desea continuar?");
 const iva = 0.21; 
-while(continuar.toLocaleLowerCase != "n"){
+while(continuar){
+    let productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera"));
+    if (productos > 3){
+        alert("numero invalido")
+    }
     switch (productos){
         case 1:
             cantidad = prompt("Cuantos va a llevar?");
@@ -26,32 +26,15 @@ while(continuar.toLocaleLowerCase != "n"){
             console.log(valorTotal);
             break;
     }
-  
-        continuar = prompt("Quiere agregar otro porducto? \n S-si N-no");
-        if(continuar.toLocaleLowerCase != "n"){ 
-        productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera"));
-        }else{
-            alert = ("gracias por su comrpa el total es: " + totalIva)
-        }
+    continuar = confirm("desea continuar?"); 
 } 
 
 
+totalIva(iva,valorTotal); 
 
-function totalIva (iva,valorTotal){
-    console.log((valorTotal*iva) + valorTotal);
+function totalIva(iva,valorTotal){
+    console.log((valorTotal*iva)+valorTotal);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
