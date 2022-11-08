@@ -7,25 +7,21 @@ const carrito = []
 const iva = 0.21;
 
 class Producto{
-    constructor(nombre,precio,id){
+    constructor(nombre,precio,id,stock){
         this.nombre = nombre;
         this.precio = precio;
         this.id = id;
+        this.stock = stock;
     }
-
-    
 }
 
-const producto1 = new Producto("pantalon",1000,001);
-const producto2 = new Producto("remera",2000,002);
-const producto3 = new Producto("campera",9000,003);
-const producto4 = new Producto("buso",3000,004);
+const producto1 = new Producto("pantalon",1000,001,3000);
+const producto2 = new Producto("remera",2000,002,4000);
+const producto3 = new Producto("campera",9000,003,5000);
+const producto4 = new Producto("buso",3000,004,6000);
 
 const BBDD =[producto1,producto2,producto3,producto4]
 
-BBDD.forEach((el) => {
-    console.log(el)
-});
 
 while(continuar){
     let productos = Number(prompt("Seleccione un producto \n 1-pantalon 2-remera 3-campera 4-buso"));
@@ -52,17 +48,27 @@ while(continuar){
             carrito.push(BBDD[2]);
             break;
         case 4:    
-             cantidad = prompt("Cuantos va a llevar?");
-             valorTotal = 3000*cantidad;
+            cantidad = prompt("Cuantos va a llevar?");
+            valorTotal = 3000*cantidad;
             console.log(valorTotal);
             carrito.push(BBDD[3]);
             break;
     }
     continuar = confirm("desea continuar?"); 
-} 
+    
+}
 
-console.log(carrito)
+const stockActualizado = carrito.map((producto)=>{
+    return{
+        nombre: producto.nombre,
+        precio: producto.precio,
+        id: producto.id,
+        stock: producto.stock-cantidad
+    }
+})
+console.log(stockActualizado)
 
+console.log (carrito)
 totalIva(iva,valorTotal); 
 
 function totalIva(iva,valorTotal){
