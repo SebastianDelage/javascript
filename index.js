@@ -66,7 +66,6 @@ const stockActualizado = carrito.map((producto)=>{
         stock: producto.stock-cantidad
     }
 })
-console.log(stockActualizado)
 
 console.log (carrito)
 totalIva(iva,valorTotal); 
